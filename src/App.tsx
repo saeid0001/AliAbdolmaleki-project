@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Routers } from "../Router";
 import { useDispatch } from "react-redux/es/exports";
-import { fetchinMusic } from "./context/musicSlice/musicSlice";
+import { fetchinMusic } from "./context/musicSlice/MusicSlice";
 import { AppDispatch } from "./context/store";
 import { fetchingConcert } from "./context/concertSlice/ConcertSlice";
 

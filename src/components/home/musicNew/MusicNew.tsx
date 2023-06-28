@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import Title from "../../main/Title";
-import { AllMusic, LoadingMusic } from "../../../context/musicSlice/musicSlice";
+import { AllMusic, LoadingMusic } from "../../../context/musicSlice/MusicSlice";
 
 const MusicNew = () => {
   const [play, setPlay] = useState(false);
