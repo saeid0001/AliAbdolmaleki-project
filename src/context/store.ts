@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import muiscReducer from "./musicSlice/musicSlice";
+import ConcertReducer from "./concertSlice/ConcertSlice";
 
 export const store = configureStore({
   reducer: {
     music: muiscReducer,
+    concert: ConcertReducer,
   },
 });
 

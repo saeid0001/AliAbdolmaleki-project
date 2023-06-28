@@ -7,7 +7,7 @@ const Navbar = () => {
       {open ? (
         <div
           onClick={() => setOpen((current) => !current)}
-          className=" fixed top-0 right-0 w-full h-full bg-[#00000083]"
+          className=" fixed top-0 right-0 w-full h-full bg-[#00000083] z-20"
         />
       ) : null}
       <nav>
@@ -127,7 +127,7 @@ const Navbar = () => {
             <div
               className={`${
                 open ? "block" : "hidden"
-              } fixed top-0 right-0 w-[40%]`}
+              } fixed top-0 right-0 w-[40%] z-30`}
               id="navbar-default"
             >
               <ul className="font-medium text-right h-[100vh] flex flex-col p-4 bg-one">
