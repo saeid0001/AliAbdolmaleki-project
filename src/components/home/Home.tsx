@@ -5,6 +5,7 @@ import Biography from "./biography/Biography";
 import Concert from "./concert/Concert";
 import Header from "./header/Header";
 import MusicNew from "./musicNew/MusicNew";
+import NewAlbum from "./newAlbum/NewAlbum";
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <Navbar />
       <Header />
       <MusicNew />
+      <NewAlbum />
       <Concert />
       <AllMusic />
       <Biography />

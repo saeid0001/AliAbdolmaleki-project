@@ -214,7 +214,7 @@ const MusicNew = () => {
                           width="25px"
                           height="25px"
                           viewBox="0 0 70 70"
-                          enable-background="new 0 0 70 70"
+                          enableBackground="new 0 0 70 70"
                         >
                           <g>
                             <g>

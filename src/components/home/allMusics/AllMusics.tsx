@@ -36,7 +36,7 @@ const AllMusics = () => {
           <div className="pt-2 flex flex-wrap justify-between">
             {AllMus.map((music) => {
               return (
-                <div className="w-[24%] cursor-pointer group hover:scale-110 transition duration-150 ease-out relative rounded-md overflow-hidden">
+                <div key={music.id} className="w-[24%] cursor-pointer group hover:scale-110 transition duration-150 ease-out relative rounded-md overflow-hidden">
                   <img src={music.image} className="" alt="" />
                   <div className="group-hover:flex justify-center items-center flex-col absolute group-hover:top-0 group-hover:right-0 group-hover:bottom-0 transition duration-300 ease-out group-hover:bg-four group-hover:bg-opacity-50 group-hover:text-[#fff]  group-hover:w-full">
                     <p>{music.namefa}</p>

@@ -56,5 +56,95 @@
             "price": "",
             "link": "#"
         }
+    ],
+    "album": [
+        {
+            "id": 1,
+            "namefa": "مخاطب خاص",
+            "nameen": "Mokhatabe Khaas",
+            "image": [
+                "https://server4.iranmusic.ir/music/AlbumS/Album/Ali%20Abdolmaleki/Ali%20Abdolmaleki%20-%20Mokhatabe%20Khas/Covers/Ali%20Abdolmaleki%201.jpg",
+                "https://iranmusic.ir/wp-content/uploads/2015/05/Ali-Abdolmaleki-Mokhatabe-Khas.jpg",
+                "https://server4.iranmusic.ir/music/AlbumS/Album/Ali%20Abdolmaleki/Ali%20Abdolmaleki%20-%20Mokhatabe%20Khas/Covers/Ali%20Abdolmaleki%204.jpg",
+                "https://server4.iranmusic.ir/music/AlbumS/Album/Ali%20Abdolmaleki/Ali%20Abdolmaleki%20-%20Mokhatabe%20Khas/Covers/Ali%20Abdolmaleki%202.jpg"
+            ],
+            "tracks": [
+                {
+                    "id": 1,
+                    "name": "هوا دونفرست",
+                    "music": "https://sv2.mybia2music.com/s2/Music/1394/03/04/01/Ali%20Abdolmaleki%20-%20Mokhatabe%20Khaas%20%5b128%5d/01.%20Hava%20Do%20Nafarast%20%5b128%5d.mp3"
+                },
+                {
+                    "id": 2,
+                    "name": "وایسا",
+                    "music": "https://sv2.mybia2music.com/s2/Music/1394/03/04/01/Ali%20Abdolmaleki%20-%20Mokhatabe%20Khaas%20%5b128%5d/02.%20Vaysa%20%5b128%5d.mp3"
+                },
+                {
+                    "id": 3,
+                    "name": "دلم مونده رو دستم",
+                    "music": "https://sv2.mybia2music.com/s2/Music/1394/03/04/01/Ali%20Abdolmaleki%20-%20Mokhatabe%20Khaas%20%5b128%5d/03.%20Delam%20Moonde%20Roo%20Dastam%20%5b128%5d.mp3"
+                },
+                {
+                    "id": 4,
+                    "name": "عشق من",
+                    "music": "https://sv2.mybia2music.com/s2/Music/1394/03/04/01/Ali%20Abdolmaleki%20-%20Mokhatabe%20Khaas%20%5b128%5d/04.%20Eshghe%20Man%20%5b128%5d.mp3"
+                },
+                {
+                    "id": 5,
+                    "name": "مخاطب خاص",
+                    "music": "https://sv2.mybia2music.com/s2/Music/1394/03/04/01/Ali%20Abdolmaleki%20-%20Mokhatabe%20Khaas%20%5b128%5d/05.%20Mokhatabe%20Khaas%20%5b128%5d.mp3"
+                },
+                {
+                    "id": 6,
+                    "name": "عکس لب دریا",
+                    "music": "https://sv2.mybia2music.com/s2/Music/1394/03/04/01/Ali%20Abdolmaleki%20-%20Mokhatabe%20Khaas%20%5b128%5d/06.%20Akse%20Labe%20Darya%20%5b128%5d.mp3"
+                },
+                {
+                    "id": 7,
+                    "name": "یهویی",
+                    "music": "https://sv2.mybia2music.com/s2/Music/1394/03/04/01/Ali%20Abdolmaleki%20-%20Mokhatabe%20Khaas%20%5b128%5d/07.%20Yehoei%20%5b128%5d.mp3"
+                },
+                {
+                    "id": 8,
+                    "name": "سخته",
+                    "music": "https://sv2.mybia2music.com/s2/Music/1394/03/04/01/Ali%20Abdolmaleki%20-%20Mokhatabe%20Khaas%20%5b128%5d/08.%20Sakhteh%20%5b128%5d.mp3"
+                },
+                {
+                    "id": 9,
+                    "name": "تیکه کلام",
+                    "music": "https://sv2.mybia2music.com/s2/Music/1394/03/04/01/Ali%20Abdolmaleki%20-%20Mokhatabe%20Khaas%20%5b128%5d/09.%20Tike%20Kalam%20%5b128%5d.mp3"
+                },
+                {
+                    "id": 10,
+                    "name": "بی جهت نیست",
+                    "music": "https://sv2.mybia2music.com/s2/Music/1394/03/04/01/Ali%20Abdolmaleki%20-%20Mokhatabe%20Khaas%20%5b128%5d/10.%20Bi%20Jahat%20Nist%20%5b128%5d.mp3"
+                },
+                {
+                    "id": 11,
+                    "name": "هوا بارونیه",
+                    "music": "https://sv2.mybia2music.com/s2/Music/1394/03/04/01/Ali%20Abdolmaleki%20-%20Mokhatabe%20Khaas%20%5b128%5d/11.%20Hava%20Baroonieh%20%5b128%5d.mp3"
+                },
+                {
+                    "id": 12,
+                    "name": "تو حق نداری",
+                    "music": "https://sv2.mybia2music.com/s2/Music/1394/03/04/01/Ali%20Abdolmaleki%20-%20Mokhatabe%20Khaas%20%5b128%5d/12.%20To%20Hagh%20Nadari%20%5b128%5d.mp3"
+                },
+                {
+                    "id": 13,
+                    "name": "گریه نکن",
+                    "music": "https://sv2.mybia2music.com/s2/Music/1394/03/04/01/Ali%20Abdolmaleki%20-%20Mokhatabe%20Khaas%20%5b128%5d/13.%20Geryeh%20Nakon%20%5b128%5d.mp3"
+                },
+                {
+                    "id": 14,
+                    "name": "همسایه",
+                    "music": "https://sv2.mybia2music.com/s2/Music/1394/03/04/01/Ali%20Abdolmaleki%20-%20Mokhatabe%20Khaas%20%5b128%5d/14.%20Hamsayeh%20%5b128%5d.mp3"
+                },
+                {
+                    "id": 15,
+                    "name": "نشد",
+                    "music": "https://sv2.mybia2music.com/s2/Music/1394/03/04/01/Ali%20Abdolmaleki%20-%20Mokhatabe%20Khaas%20%5b128%5d/15.%20Nashod%20%5b128%5d.mp3"
+                }
+            ]
+        }
     ]
 }
