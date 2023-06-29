@@ -10,6 +10,8 @@ const NewAlbum = () => {
   const [cur, setCur] = useState("00:00");
   const [volume, setVolume] = useState(60);
   const [music, setMusic] = useState<string>();
+  const [img, setImg] = useState(0);
+  const [intervalId, setIntervalId] = useState<number | undefined>();
 
   const AudioRef = useRef<HTMLAudioElement>(null);
   const RangeRef = useRef<HTMLInputElement>(null);
@@ -42,13 +44,31 @@ const NewAlbum = () => {
   }, [AudioRef, RangeRef]);
 
   useEffect(() => {
+    function startTimer() {
+      const id = setInterval(() => {
+        setImg((prevCounter) => {
+          if (prevCounter === AlbumeNew[0].image.length - 1) {
+            return 0;
+          } else {
+            return prevCounter + 1;
+          }
+        });
+      }, 10000);
+      setIntervalId(id);
+    }
+    function stopTimer() {
+      clearInterval(intervalId);
+      setIntervalId(undefined);
+    }
     if (play && DiskRef.current) {
       AudioRef.current?.play();
       DiskRef.current.style.setProperty("--time-album", "10s");
+      startTimer();
     } else {
       AudioRef.current?.pause();
       DiskRef.current &&
         DiskRef.current.style.setProperty("--time-album", "0s");
+      stopTimer();
     }
 
     playAnimationRef.current = requestAnimationFrame(repeat);
@@ -175,10 +195,13 @@ const NewAlbum = () => {
       );
     }
   };
+
   const endMusic = () => {
     if (DiskRef.current) {
       DiskRef.current.style.setProperty("--time-album", "0s");
     }
+    clearInterval(intervalId);
+    setIntervalId(0);
   };
 
   return (
@@ -192,9 +215,9 @@ const NewAlbum = () => {
               <Fragment key={album.id}>
                 <div className="Album__new md:w-[50%] w-[100%]">
                   <img
-                    className="w-[500px] h-[450px]"
+                    className="w-[500px] h-[450px] transition duration-300 ease-out"
                     ref={DiskRef}
-                    src={album.image[0]}
+                    src={album.image[img]}
                     alt=""
                   />
                 </div>
@@ -213,9 +236,19 @@ const NewAlbum = () => {
                           }}
                         >
                           <span>{track.name}</span>
-                          {/* <span onClick={() => setPlayMusic((cur) => !cur)}>
-                          {playMusic ? "play" : "puse"}
-                        </span> */}
+                          <a href={track.music} download>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="#ccc"
+                              width="20px"
+                              height="20px"
+                              viewBox="0 0 32 32"
+                              version="1.1"
+                            >
+                              <title>دانلود آهنگ-{track.name}</title>
+                              <path d="M0 16q0 2.912 1.824 5.088t4.576 2.752q0.032 0 0.032-0.032v-0.064t0.032-0.032q0.544-1.344 1.344-2.176t2.208-1.184v-2.336q0-2.496 1.728-4.256t4.256-1.76 4.256 1.76 1.76 4.256v2.336q1.376 0.384 2.176 1.216t1.344 2.144l0.096 0.288h0.384q2.464 0 4.224-1.76t1.76-4.224v-2.016q0-2.464-1.76-4.224t-4.224-1.76q-0.096 0-0.32 0.032 0.32-1.152 0.32-2.048 0-3.296-2.368-5.632t-5.632-2.368q-2.88 0-5.056 1.824t-2.784 4.544q-1.152-0.352-2.176-0.352-3.296 0-5.664 2.336t-2.336 5.664v1.984zM10.016 25.824q-0.096 0.928 0.576 1.6l4 4q0.576 0.576 1.408 0.576t1.408-0.576l4-4q0.672-0.672 0.608-1.6-0.064-0.32-0.16-0.576-0.224-0.576-0.736-0.896t-1.12-0.352h-1.984v-5.984q0-0.832-0.608-1.408t-1.408-0.608-1.408 0.608-0.576 1.408v5.984h-2.016q-0.608 0-1.12 0.352t-0.736 0.896q-0.096 0.288-0.128 0.576z" />
+                            </svg>
+                          </a>
                         </div>
                       );
                     })}
@@ -232,7 +265,11 @@ const NewAlbum = () => {
                       <div className="w-[30%] flex justify-center flex-col items-center">
                         <button
                           type="button"
-                          onClick={() => setPlay((current) => !current)}
+                          onClick={() => {
+                            setPlay((current) => !current);
+                            music === undefined &&
+                              setMusic(album.tracks[0].music);
+                          }}
                         >
                           {!play ? (
                             <span>

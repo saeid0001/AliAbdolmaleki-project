@@ -8,7 +8,7 @@ const AllMusics = () => {
 
   return (
     <section className="p-8 my-12">
-      <Title fa="همه ی آهنگ ها" en="All Music" />
+      <Title fa="آهنگ های اخیر" en="Recent Songs" />
       {Loading && <div className="custom-loader"></div>}
       {!Loading && (
         <>
@@ -34,22 +34,27 @@ const AllMusics = () => {
             <span className="mx-1">همه آهنگ ها</span>
           </button>
           <div className="pt-2 flex flex-wrap justify-between">
-            {AllMus.map((music) => {
-              return (
-                <div key={music.id} className="w-[24%] cursor-pointer group hover:scale-110 transition duration-150 ease-out relative rounded-md overflow-hidden">
-                  <img src={music.image} className="" alt="" />
-                  <div className="group-hover:flex justify-center items-center flex-col absolute group-hover:top-0 group-hover:right-0 group-hover:bottom-0 transition duration-300 ease-out group-hover:bg-four group-hover:bg-opacity-50 group-hover:text-[#fff]  group-hover:w-full">
-                    <p>{music.namefa}</p>
-                    <p>{music.nameen}</p>
-                    {music.musicBy !== "" && <p>آهنگساز : {music.musicBy}</p>}
-                    {music.arng !== "" && <p>تنظیم کننده : {music.arng}</p>}
-                    {music.songwriter !== "" && (
-                      <p>ترانه سرا: {music.songwriter}</p>
-                    )}
+            {AllMus.slice(AllMus.length - 6)
+              .reverse()
+              .map((music) => {
+                return (
+                  <div
+                    key={music.id}
+                    className="w-[24%] mb-4 cursor-pointer group hover:scale-110 transition duration-150 ease-out relative rounded-md overflow-hidden"
+                  >
+                    <img src={music.image} className="" alt="" />
+                    <div className="group-hover:flex justify-center items-center flex-col absolute group-hover:top-0 group-hover:right-0 group-hover:bottom-0 transition duration-300 ease-out group-hover:bg-four group-hover:bg-opacity-50 group-hover:text-[#fff]  group-hover:w-full">
+                      <p>{music.namefa}</p>
+                      <p>{music.nameen}</p>
+                      {music.musicBy !== "" && <p>آهنگساز : {music.musicBy}</p>}
+                      {music.arng !== "" && <p>تنظیم کننده : {music.arng}</p>}
+                      {music.songwriter !== "" && (
+                        <p>ترانه سرا: {music.songwriter}</p>
+                      )}
+                    </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
           </div>
         </>
       )}
