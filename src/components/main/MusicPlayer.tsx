@@ -29,6 +29,7 @@ const MusicPlayer = ({ music, optional, namefa, nameen }: MusicPlayerType) => {
       CurrentTimeRef.current.style.setProperty(
         "--currrent-time",
         `${
+          0.5 |
           (Number(RangeRef.current.value) / AudioRef.current.duration) * 100 - 2
         }%`
       );
@@ -264,6 +265,7 @@ const MusicPlayer = ({ music, optional, namefa, nameen }: MusicPlayerType) => {
           ref={RangeRef}
           onChange={changeRangeAudio}
           dir="ltr"
+          onClick={()=>setPlay(true)}
         />
         <span ref={CurrentTimeRef} className="current__tiem">
           {cur}

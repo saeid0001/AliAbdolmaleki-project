@@ -1,10 +1,18 @@
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import Title from "../../main/Title";
 import { AllMusic, LoadingMusic } from "../../../context/musicSlice/MusicSlice";
+import SubAllMusic from "./SubAllMusic";
 
 const AllMusics = () => {
   const AllMus = useSelector(AllMusic);
   const Loading = useSelector(LoadingMusic);
+
+  const navigation = useNavigate()
+
+  const goToAllMusic = () =>{
+    navigation("AllMusic")
+  }
 
   return (
     <section className="p-8 my-12">
@@ -12,7 +20,7 @@ const AllMusics = () => {
       {Loading && <div className="custom-loader"></div>}
       {!Loading && (
         <>
-          <button className="flex justify-center items-center mt-12 py-1 px-2 rounded-md text-[#fff] bg-two hover:bg-three transition duration-150 ease-out">
+          <button onClick={goToAllMusic} className="flex justify-center items-center mt-12 py-1 px-2 rounded-md text-[#fff] bg-two hover:bg-three transition duration-150 ease-out">
             <span className="mx-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -38,21 +46,15 @@ const AllMusics = () => {
               .reverse()
               .map((music) => {
                 return (
-                  <div
+                  <SubAllMusic
                     key={music.id}
-                    className="w-[24%] mb-4 cursor-pointer group hover:scale-110 transition duration-150 ease-out relative rounded-md overflow-hidden"
-                  >
-                    <img src={music.image} className="" alt="" />
-                    <div className="group-hover:flex justify-center items-center flex-col absolute group-hover:top-0 group-hover:right-0 group-hover:bottom-0 transition duration-300 ease-out group-hover:bg-four group-hover:bg-opacity-50 group-hover:text-[#fff]  group-hover:w-full">
-                      <p>{music.namefa}</p>
-                      <p>{music.nameen}</p>
-                      {music.musicBy !== "" && <p>آهنگساز : {music.musicBy}</p>}
-                      {music.arng !== "" && <p>تنظیم کننده : {music.arng}</p>}
-                      {music.songwriter !== "" && (
-                        <p>ترانه سرا: {music.songwriter}</p>
-                      )}
-                    </div>
-                  </div>
+                    image={music.image}
+                    namefa={music.namefa}
+                    nameen={music.nameen}
+                    musicBy={music.musicBy}
+                    arng={music.arng}
+                    songwriter={music.songwriter}
+                  />
                 );
               })}
           </div>

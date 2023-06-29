@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -13,7 +14,11 @@ const Navbar = () => {
       <nav>
         <div className="max-w-screen-xl flex flex-row-reverse flex-wrap items-center justify-between mx-auto p-4">
           <div className="flex items-center">
-            <a href="#" className="mx-1">
+            <a
+              href="https://www.instagram.com/Aliabdolmaleki/"
+              target={"_blank"}
+              className="mx-1"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="25px"
@@ -52,7 +57,11 @@ const Navbar = () => {
                 />
               </svg>
             </a>
-            <a href="#" className="mx-1">
+            <a
+              href="https://t.me/Ali_Abdolmaleki"
+              target={"_blank"}
+              className="mx-1"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 aria-label="Telegram"
@@ -73,7 +82,11 @@ const Navbar = () => {
                 />
               </svg>
             </a>
-            <a href="#" className="mx-1">
+            <a
+              href="https://www.youtube.com/@Ali_Abdolmaleki"
+              target={"_blank"}
+              className="mx-1"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="25px"
@@ -123,50 +136,56 @@ const Navbar = () => {
             <div
               className={`${
                 open ? "block" : "hidden"
-              } fixed top-0 right-0 w-[40%] z-30`}
+              } fixed md:top-0 md:right-0 md:w-[40%] w-[100%] left-0 right-0 bottom-0 z-30`}
               id="navbar-default"
             >
-              <ul className="font-medium text-right h-[100vh] flex flex-col p-4 bg-one">
-                <li>
-                  <a
-                    href="#"
-                    className="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
+              <ul className="font-medium w-full text-right md:h-[100vh] flex md:flex-col md:justify-start justify-evenly md:p-4 bg-one md:rounded-e-full md:overflow-hidden">
+                <li className="p-2 hidden md:block">
+                  <button
+                    type="button"
+                    onClick={() => setOpen((current) => !current)}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="30px"
+                      height="30px"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21ZM13.2929 14.7071C13.6834 15.0976 14.3166 15.0976 14.7071 14.7071C15.0976 14.3166 15.0976 13.6834 14.7071 13.2929L13.4142 12L14.7071 10.7071C15.0976 10.3166 15.0976 9.68342 14.7071 9.29289C14.3166 8.90237 13.6834 8.90237 13.2929 9.29289L12 10.5858L10.7071 9.29289C10.3166 8.90237 9.68342 8.90237 9.29289 9.29289C8.90237 9.68342 8.90237 10.3166 9.29289 10.7071L10.5858 12L9.29289 13.2929C8.90237 13.6834 8.90237 14.3166 9.29289 14.7071C9.68342 15.0976 10.3166 15.0976 10.7071 14.7071L12 13.4142L13.2929 14.7071ZM14.6788 5.53284C13.1826 4.91309 11.5178 4.83131 9.96801 5.30142C8.41826 5.77153 7.07945 6.76445 6.17971 8.11101C5.27997 9.45756 4.87497 11.0744 5.03371 12.6861C5.19244 14.2978 5.9051 15.8046 7.05025 16.9497C7.44077 17.3403 8.07394 17.3403 8.46446 16.9497C8.85499 16.5592 8.85499 15.9261 8.46447 15.5355C7.6465 14.7176 7.13746 13.6413 7.02408 12.4901C6.91069 11.3389 7.19998 10.184 7.84265 9.22215C8.48532 8.26032 9.44161 7.55109 10.5486 7.2153C11.6555 6.8795 12.8447 6.93792 13.9134 7.3806C14.9821 7.82328 15.8643 8.62283 16.4096 9.64302C16.9549 10.6632 17.1296 11.8409 16.9039 12.9755C16.6783 14.11 16.0662 15.1312 15.172 15.8651C14.2778 16.5989 13.1568 17 12 17C11.4477 17 11 17.4477 11 18C11 18.5523 11.4477 19 12 19C13.6195 19 15.1889 18.4385 16.4408 17.4111C17.6926 16.3837 18.5496 14.954 18.8655 13.3656C19.1814 11.7773 18.9369 10.1285 18.1734 8.70022C17.41 7.27196 16.175 6.15259 14.6788 5.53284Z"
+                        fill="#000"
+                      />
+                    </svg>
+                  </button>
+                </li>
+                <li className="mobile__nav md:after:hidden after:bg-two mx-2 after:top-[2px] hover:after:top-[-15px] transition duration-150 ease-out">
+                  <Link
+                    to={"/"}
+                    className="block p-2 text-[#ccc] md:rounded-md hover:bg-two transition duration-150 ease-out md:mb-2"
                     aria-current="page"
                   >
-                    Home
-                  </a>
+                    صفحه اصلی
+                  </Link>
                 </li>
-                <li>
-                  <a
-                    href="#"
-                    className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                <li className="mobile__nav md:after:hidden after:bg-two mx-2 after:top-[2px] hover:after:top-[-15px] transition duration-150 ease-out">
+                  <Link
+                    to={"/AllMusic"}
+                    className="block p-2 text-[#ccc] md:rounded-md hover:bg-two  transition duration-150 ease-out md:mb-2"
                   >
-                    About
-                  </a>
+                    همه آهنگ ها
+                  </Link>
                 </li>
-                <li>
-                  <a
-                    href="#"
-                    className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                  >
-                    Services
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                  >
-                    Pricing
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                  >
-                    Contact
-                  </a>
+                <li className=" hidden md:flex h-[100%] items-center">
+                  <div className="md:w-[50%] w-full">
+                    <img
+                      src="../../../src/img/ali.png"
+                      className="md:w-[50%] m-auto"
+                      alt="Ali Abdolmaleki"
+                    />
+                  </div>
                 </li>
               </ul>
             </div>

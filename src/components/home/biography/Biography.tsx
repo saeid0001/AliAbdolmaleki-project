@@ -4,8 +4,8 @@ const Biography = () => {
   return (
     <section className="p-8 my-12">
       <Title fa="بیوگرافی" en="Biography"/>
-      <div className="flex justify-between items-center pt-12">
-        <div className="w-[45%] text-[#ccc] ">
+      <div className="flex justify-between md:flex-row flex-col items-center pt-12">
+        <div className="md:w-[45%] w-full text-[#ccc] ">
           <h1 className="text-[45px] text-one">علی عبدالمالکی</h1>
           <p className="leading-8">
             (زادهٔ ۲۶ مرداد ۱۳۶۳) خواننده، ترانه‌سرا، آهنگساز و تنظیم‌کنندهٔ
@@ -23,7 +23,7 @@ const Biography = () => {
             دنیای هنر منتشر شد.
           </p>
         </div>
-        <div className="w-[45%]">
+        <div className="md:w-[45%] w-full">
           <img
             src="/src/img/two.png"
             className=" drop-shadow-2xl"

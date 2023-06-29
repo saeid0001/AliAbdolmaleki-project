@@ -4,7 +4,7 @@ const Footer = () => {
       <div className="flex flex-wrap flex-col justify-centerce items-center md:flex-row">
         <div className="md:w-[35%] w-full">
           <img
-            src="src/img/ali.png"
+            src="../../../src/img/ali.png"
             className="md:w-[50%] m-auto"
             alt="Ali Abdolmaleki"
           />
