@@ -10,7 +10,7 @@ const Concert = () => {
   const Loading = useSelector(LoadingConcert);
 
   return (
-    <section className="p-8 my-12">
+    <section className="p-8 my-12" data-aos="fade-down">
       <Title en="Concert Tour" fa="برنامه کنسرت ها" />
       {Loading && <div className="custom-loader"></div>}
       {!Loading &&
@@ -19,8 +19,10 @@ const Concert = () => {
             <div
               className={`pt-12 flex flex-col ${
                 index % 2 === 0 ? "items-start" : "items-end"
-              }`}
+              } md:text-base text-xs`}
               key={concert.id}
+              data-aos="fade-down"
+              data-aos-delay="500"
             >
               <div
                 className={`flex flex-col w-full md:w-[50%] items-center ${
@@ -28,10 +30,10 @@ const Concert = () => {
                 }`}
               >
                 <div className="flex justify-between items-center w-full p-[0.35rem] rounded-md border-[#fff] border-[1px]">
-                  <span className="p-6 rounded-md mx-2 bg-[#fff] absolute">
+                  <span className="md:p-6 py-6 px-4 rounded-md mx-2 bg-[#fff] absolute">
                     {concert.city}
                   </span>
-                  <span className="p-2 mx-2">{concert.city}</span>
+                  <span className="p-2 mx-2 ">{concert.city}</span>
                   <span className="p-2 mx-2 text-[#fff]">{concert.time}</span>
                   <a
                     href={concert.link}

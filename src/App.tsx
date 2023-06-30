@@ -6,8 +6,13 @@ import { AppDispatch } from "./context/store";
 import { fetchingConcert } from "./context/concertSlice/ConcertSlice";
 import { fetchingAlbum } from "./context/albumSlice/AlbumSlice";
 
+// import AOS from "aos";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 function App() {
   const dispatch = useDispatch<AppDispatch>();
+  AOS.init();
 
   useEffect(() => {
     dispatch(fetchinMusic());

@@ -10,7 +10,7 @@ const Footer = () => {
           />
         </div>
         <div className="md:w-[60%] w-full flex flex-col items-center justify-center">
-          <ul className="flex justify-between">
+          <ul className="flex justify-between flex-wrap">
             <li className="mx-2 cursor-pointer p-2 hover:bg-two rounded-md hover:text-[#fff] transition duration-150 ease-out">
               خانه
             </li>

@@ -8,19 +8,22 @@ const AllMusics = () => {
   const AllMus = useSelector(AllMusic);
   const Loading = useSelector(LoadingMusic);
 
-  const navigation = useNavigate()
+  const navigation = useNavigate();
 
-  const goToAllMusic = () =>{
-    navigation("AllMusic")
-  }
+  const goToAllMusic = () => {
+    navigation("AllMusic");
+  };
 
   return (
-    <section className="p-8 my-12">
+    <section className="p-8 my-12" data-aos="fade-down">
       <Title fa="آهنگ های اخیر" en="Recent Songs" />
       {Loading && <div className="custom-loader"></div>}
       {!Loading && (
         <>
-          <button onClick={goToAllMusic} className="flex justify-center items-center mt-12 py-1 px-2 rounded-md text-[#fff] bg-two hover:bg-three transition duration-150 ease-out">
+          <button
+            onClick={goToAllMusic}
+            className="flex justify-center items-center mt-12 py-1 px-2 rounded-md text-[#fff] bg-two hover:bg-three transition duration-150 ease-out"
+          >
             <span className="mx-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -44,10 +47,11 @@ const AllMusics = () => {
           <div className="pt-2 flex flex-wrap justify-between">
             {AllMus.slice(AllMus.length - 6)
               .reverse()
-              .map((music) => {
+              .map((music , index) => {
                 return (
                   <SubAllMusic
                     key={music.id}
+                    index = {index}
                     image={music.image}
                     namefa={music.namefa}
                     nameen={music.nameen}

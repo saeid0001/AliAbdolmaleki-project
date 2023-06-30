@@ -1,11 +1,13 @@
 import Title from "../../main/Title";
 
+
 const Biography = () => {
+  
   return (
-    <section className="p-8 my-12">
-      <Title fa="بیوگرافی" en="Biography"/>
+    <section className="p-8 my-12 overflow-hidden">
+      <Title fa="بیوگرافی" en="Biography" />
       <div className="flex justify-between md:flex-row flex-col items-center pt-12">
-        <div className="md:w-[45%] w-full text-[#ccc] ">
+        <div className="md:w-[45%] w-full text-[#ccc] " data-aos="fade-up-left">
           <h1 className="text-[45px] text-one">علی عبدالمالکی</h1>
           <p className="leading-8">
             (زادهٔ ۲۶ مرداد ۱۳۶۳) خواننده، ترانه‌سرا، آهنگساز و تنظیم‌کنندهٔ
@@ -23,7 +25,7 @@ const Biography = () => {
             دنیای هنر منتشر شد.
           </p>
         </div>
-        <div className="md:w-[45%] w-full">
+        <div className="md:w-[45%] w-full" data-aos="fade-up-right" data-aos-delay="500">
           <img
             src="/src/img/two.png"
             className=" drop-shadow-2xl"

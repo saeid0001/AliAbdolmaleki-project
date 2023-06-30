@@ -205,7 +205,7 @@ const NewAlbum = () => {
   };
 
   return (
-    <section className="p-8 my-12">
+    <section className="p-8 my-12" data-aos="fade-down">
       <Title fa="جدیدترین آلبوم" en="New Album" />
       {LoadingA && <div className="custom-loader"></div>}
       {!LoadingA && (
@@ -213,9 +213,9 @@ const NewAlbum = () => {
           {AlbumeNew.map((album) => {
             return (
               <Fragment key={album.id}>
-                <div className="Album__new md:w-[50%] w-[100%]">
+                <div className="Album__new md:w-[50%] w-[100%]" data-aos="flip-right"  data-aos-delay="500">
                   <img
-                    className="w-[500px] h-[450px] transition duration-300 ease-out"
+                    className="w-[100%] md:h-[450px] h-auto transition duration-300 ease-out"
                     ref={DiskRef}
                     src={album.image[img]}
                     alt=""

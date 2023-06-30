@@ -9,7 +9,7 @@ const MusicNew = () => {
   const NewMusic = AllMusics.filter((music) => music.id === AllMusics.length);
 
   return (
-    <section className="p-8 my-12">
+    <section className="p-8 my-12" data-aos="fade-down">
       <Title en="New Music" fa="آهنگ جدید" />
       {Loading && <div className="custom-loader"></div>}
       {!Loading &&

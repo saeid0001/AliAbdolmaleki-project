@@ -1,7 +1,7 @@
 const Header = () => {
   return (
-    <section className="px-8">
-      <div className="absolute top-0 right-0 -z-10 w-[100%] md:h-[100vh] h-[110vh]">
+    <section className="px-8 overflow-hidden">
+      <div className="absolute top-0 right-0 -z-10 w-[100%] md:h-[100vh] h-[120vh]">
         {/* <video
           src="/src/img/4_5933730192550793375484.mp4"
           className="w-full h-full object-cover blur-sm"
@@ -15,18 +15,30 @@ const Header = () => {
           alt="AliAbdolmaleki"
         />
       </div>
-      <div className="md:h-[100vh] h-[110vh] w-full flex md:flex-row flex-col-reverse md:justify-around justify-center items-center">
-        <div className="md:w-[45%] w-full">
+      <div className="md:h-[100vh] h-[120vh] w-full flex md:flex-row flex-col-reverse md:justify-between justify-center items-center">
+        <div
+          className="md:w-[45%] w-full"
+          data-aos="fade-up-left"
+          data-aos-delay="500"
+        >
           <img src="/src/img/new.png" alt="" className="drop-shadow-2xl" />
         </div>
-        <div className="md:w-[45%] text-[#fff] w-full text-center md:text-left text-[60px] drop-shadow-[0px_0px_20px_#ce1111]">
-          <span>Ali</span>
-          <br />
-          <span>Abdolmaleki</span>
-        </div>
-
         <div
-          className="absolute md:bottom-[-10px] -bottom-[73px] right-0 w-full h-48 z-20"
+          className="md:w-[45%] w-full"
+          data-aos="fade-down-right"
+          data-aos-delay="500"
+        >
+          {/* <span>Ali</span>
+          <br />
+          <span>Abdolmaleki</span> */}
+          <img
+            src="/src/img/AA.png"
+            alt=""
+            className=" m-auto drop-shadow-2xl"
+          />
+        </div>
+        <div
+          className="absolute md:bottom-[-10px] -bottom-[140px] right-0 w-full h-48 z-20"
           style={{
             background:
               "linear-gradient(180deg, rgba(255, 255, 255, 0) 37%, #333 93%)",
