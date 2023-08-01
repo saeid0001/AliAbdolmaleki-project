@@ -57,8 +57,8 @@ const NewAlbum = () => {
       setIntervalId(id);
     }
     function stopTimer() {
-      clearInterval(intervalId);
       setIntervalId(undefined);
+      return clearInterval(intervalId);
     }
     if (play && DiskRef.current) {
       AudioRef.current?.play();
@@ -213,9 +213,13 @@ const NewAlbum = () => {
           {AlbumeNew.map((album) => {
             return (
               <Fragment key={album.id}>
-                <div className="Album__new md:w-[50%] w-[100%]" data-aos="flip-right"  data-aos-delay="500">
+                <div
+                  className="Album__new md:w-[50%] w-[100%]"
+                  data-aos="flip-right"
+                  data-aos-delay="500"
+                >
                   <img
-                    className="w-[100%] md:h-[450px] h-auto transition duration-300 ease-out"
+                    className="w-[100%] h-auto transition-all duration-150 ease-in"
                     ref={DiskRef}
                     src={album.image[img]}
                     alt=""
@@ -229,7 +233,7 @@ const NewAlbum = () => {
                           key={track.id}
                           className={`${
                             track.music === music ? "bg-three" : null
-                          } cursor-pointer text-center border-b-[1px] border-three text-[#fff] p-2 flex justify-between`}
+                          } cursor-pointer hover:bg-three transition-all duration-150 ease-in text-center border-b-[1px] border-three text-[#fff] p-2 flex justify-between`}
                           onClick={() => {
                             setMusic(track.music);
                             setPlay(true);
@@ -336,13 +340,20 @@ const NewAlbum = () => {
                           max={100}
                           value={volume}
                           dir="ltr"
-                          onChange={(e) => setVolume(Number(e.target.value))}
+                          onChange={(e) => {
+                            setVolume(Number(e.target.value));
+                          }}
                           style={{
                             background: `linear-gradient(to right, #a46352 ${volume}%, #ccc ${volume}%)`,
                             width: "50%",
                           }}
                         />
-                        <IconVolume />
+                        <div
+                          className="cursor-pointer"
+                          onClick={() => setVolume(0)}
+                        >
+                          <IconVolume />
+                        </div>
                       </div>
                     </div>
                     <div className="relative my-8">

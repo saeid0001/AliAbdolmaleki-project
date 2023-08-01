@@ -37,7 +37,7 @@ const Concert = () => {
                   <span className="p-2 mx-2 text-[#fff]">{concert.time}</span>
                   <a
                     href={concert.link}
-                    className="p-1 px-2 mx-2 bg-one rounded-md text-[#fff] transition duration-150 ease-out hover:bg-three cursor-pointer"
+                    className="p-1 px-2 mx-2 bg-one rounded-md text-[#fff] transition-all duration-150 ease-in hover:bg-three cursor-pointer"
                   >
                     خرید بلیط
                   </a>

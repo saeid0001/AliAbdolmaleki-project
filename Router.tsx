@@ -10,9 +10,9 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path : "*" ,
-    element: <Unfound /> 
-  } ,
+    path: "*",
+    element: <Unfound />,
+  },
   {
     path: "music/:name",
     element: <DetailsMusic />,

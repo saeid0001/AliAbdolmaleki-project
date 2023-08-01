@@ -1,10 +1,11 @@
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { AllMusic } from "../../../context/musicSlice/MusicSlice";
-import MusicPlayer from "../../main/MusicPlayer";
+// import MusicPlayer from "../../main/MusicPlayer";
 import { Fragment } from "react";
 import Navbar from "../../main/Navbar";
 import Footer from "../../main/Footer";
+import MusicPlayerTwo from "../../main/MusicPlayerTwo";
 
 const DetailsMusic = () => {
   const { name } = useParams();
@@ -24,8 +25,8 @@ const DetailsMusic = () => {
                   <div className="md:w-[40%] w-full flex justify-center drop-shadow-2xl m-auto rounded-3xl overflow-hidden">
                     <img src={music.image} alt={music.nameen} />
                   </div>
-                  <div className="w-[90%] m-auto">
-                    <MusicPlayer key={music.id} music={music.music} />
+                  <div className="w-[80%] m-auto">
+                    <MusicPlayerTwo urls={music.music && music.music} />
                   </div>
                   <div className="w-[90%] m-auto text-[#ccc] flex flex-col items-center">
                     <h3 className="my-3 text-[40px] text-three">
@@ -63,7 +64,7 @@ const DetailsMusic = () => {
                   <div className="flex justify-evenly md:flex-row flex-col  mt-6">
                     <a
                       href={music.music}
-                      className="flex justify-between md:w-[45%] w-full md:mb-0 mb-2 bg-five items-center hover:bg-four transition duration-150 ease-out text-[#ccc] p-2 rounded-md"
+                      className="flex justify-between md:w-[45%] w-full md:mb-0 mb-2 bg-five items-center hover:bg-four transition-all duration-150 ease-in text-[#ccc] p-2 rounded-md"
                       download
                     >
                       <span>
@@ -86,7 +87,7 @@ const DetailsMusic = () => {
                     </a>
                     <a
                       href={music.music}
-                      className="flex justify-between md:w-[45%] w-full md:mb-0 mb-2 bg-five items-center hover:bg-four transition duration-150 ease-out text-[#ccc] p-2 rounded-md"
+                      className="flex justify-between md:w-[45%] w-full md:mb-0 mb-2 bg-five items-center hover:bg-four transition-all duration-150 ease-in text-[#ccc] p-2 rounded-md"
                       download
                     >
                       <span>

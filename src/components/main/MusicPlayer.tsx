@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 
 interface MusicPlayerType {
-  music: string | undefined;
+  music: string;
   optional?: string;
   namefa?: string;
   nameen?: string;
@@ -30,7 +30,8 @@ const MusicPlayer = ({ music, optional, namefa, nameen }: MusicPlayerType) => {
         "--currrent-time",
         `${
           0.5 |
-          (Number(RangeRef.current.value) / AudioRef.current.duration) * 100 - 2
+          ((Number(RangeRef.current.value) / AudioRef.current.duration) * 100 -
+            2)
         }%`
       );
     }
@@ -255,7 +256,9 @@ const MusicPlayer = ({ music, optional, namefa, nameen }: MusicPlayerType) => {
               width: "50%",
             }}
           />
-          <IconVolume />
+          <div className="cursor-pointer" onClick={() => setVolume(0)}>
+            <IconVolume />
+          </div>
         </div>
       </div>
       <div className="relative my-8">
@@ -265,7 +268,7 @@ const MusicPlayer = ({ music, optional, namefa, nameen }: MusicPlayerType) => {
           ref={RangeRef}
           onChange={changeRangeAudio}
           dir="ltr"
-          onClick={()=>setPlay(true)}
+          onClick={() => setPlay(true)}
         />
         <span ref={CurrentTimeRef} className="current__tiem">
           {cur}

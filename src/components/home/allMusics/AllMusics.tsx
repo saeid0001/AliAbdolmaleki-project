@@ -22,7 +22,7 @@ const AllMusics = () => {
         <>
           <button
             onClick={goToAllMusic}
-            className="flex justify-center items-center mt-12 py-1 px-2 rounded-md text-[#fff] bg-two hover:bg-three transition duration-150 ease-out"
+            className="flex justify-center items-center mt-12 py-1 px-2 rounded-md text-[#fff] bg-two hover:bg-three transition-all duration-150 ease-in"
           >
             <span className="mx-1">
               <svg
@@ -47,11 +47,11 @@ const AllMusics = () => {
           <div className="pt-2 flex flex-wrap justify-between">
             {AllMus.slice(AllMus.length - 6)
               .reverse()
-              .map((music , index) => {
+              .map((music, index) => {
                 return (
                   <SubAllMusic
                     key={music.id}
-                    index = {index}
+                    index={index}
                     image={music.image}
                     namefa={music.namefa}
                     nameen={music.nameen}

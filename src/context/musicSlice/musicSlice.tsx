@@ -24,6 +24,7 @@ const initialState = {
   loading: false,
 } as InitialType;
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const fetchinMusic = createAsyncThunk("music/fetch", async () => {
   const respons = await api.get("music");
   return respons.data;

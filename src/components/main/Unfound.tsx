@@ -11,8 +11,21 @@ const Unfound = () => {
       <section>
         <div className="w-[50%] m-auto text-center">
           <img src={YourSvg} alt="Your SVG" />
-          <p className="my-12 text-[#ccc] ">متاسفانه صفحه ای که به دنبال آن بوده اید یافت نشد !</p>
-          <NavLink to={"/"} className="text-two">رفتن به صفحه اصلی </NavLink>
+          <p className="my-12 text-[#ccc] ">
+            متاسفانه صفحه ای که به دنبال آن بوده اید یافت نشد !
+          </p>
+          <NavLink
+            onClick={() => {
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              });
+            }}
+            to={"/"}
+            className="text-two"
+          >
+            رفتن به صفحه اصلی{" "}
+          </NavLink>
         </div>
       </section>
       <Footer />

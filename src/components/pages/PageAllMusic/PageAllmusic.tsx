@@ -17,17 +17,15 @@ const PageAllmusic = () => {
             .reverse()
             .map((music) => {
               return (
-                <>
-                  <SubAllMusic
-                    key={music.id}
-                    image={music.image}
-                    namefa={music.namefa}
-                    nameen={music.nameen}
-                    musicBy={music.musicBy}
-                    arng={music.arng}
-                    songwriter={music.songwriter}
-                  />
-                </>
+                <SubAllMusic
+                  key={music.id}
+                  image={music.image}
+                  namefa={music.namefa}
+                  nameen={music.nameen}
+                  musicBy={music.musicBy}
+                  arng={music.arng}
+                  songwriter={music.songwriter}
+                />
               );
             })}
         </div>
