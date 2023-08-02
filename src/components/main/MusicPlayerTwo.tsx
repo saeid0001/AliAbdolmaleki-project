@@ -70,7 +70,7 @@ const WaveSurferPlayer = (props: WaveSurferOptions) => {
     return () => {
       subscriptions.forEach((unsub) => unsub());
     };
-  }, [wavesurfer, volumeMusic]);
+  }, [wavesurfer]);
 
   const onVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { target } = e;
