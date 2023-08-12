@@ -38,7 +38,7 @@ const Header = () => {
           />
         </div>
         <div
-          className="absolute md:bottom-[-10px] -bottom-[140px] right-0 w-full h-48 z-20"
+          className="absolute md:bottom-[-10px] sm:-bottom-[190px] -bottom-[160px] right-0 w-full h-48 z-20"
           style={{
             background:
               "linear-gradient(180deg, rgba(255, 255, 255, 0) 37%, #333 93%)",
