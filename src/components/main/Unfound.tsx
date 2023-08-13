@@ -1,6 +1,5 @@
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-// import Svg from "../../../src/img/Oops! 404 Error with a broken robot-rafiki.svg
 import YourSvg from "../../../src/img/Oops! 404 Error with a broken robot-rafiki.svg";
 import { NavLink } from "react-router-dom";
 

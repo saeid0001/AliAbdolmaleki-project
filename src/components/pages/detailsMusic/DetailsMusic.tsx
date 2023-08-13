@@ -1,7 +1,6 @@
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { AllMusic } from "../../../context/musicSlice/MusicSlice";
-// import MusicPlayer from "../../main/MusicPlayer";
 import { Fragment } from "react";
 import Navbar from "../../main/Navbar";
 import Footer from "../../main/Footer";

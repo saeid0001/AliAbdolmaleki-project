@@ -56,23 +56,21 @@ const NewAlbum = () => {
       }, 10000);
       setIntervalId(id);
     }
+
     function stopTimer() {
-      setIntervalId(undefined);
       return clearInterval(intervalId);
     }
     if (play && DiskRef.current) {
-      AudioRef.current?.play();
-      DiskRef.current.style.setProperty("--time-album", "10s");
       startTimer();
+      AudioRef.current?.play();
+      DiskRef.current.classList.add("Animation__Img");
     } else {
-      AudioRef.current?.pause();
-      DiskRef.current &&
-        DiskRef.current.style.setProperty("--time-album", "0s");
       stopTimer();
+      AudioRef.current?.pause();
+      DiskRef.current && DiskRef.current.classList.remove("Animation__Img");
     }
-
     playAnimationRef.current = requestAnimationFrame(repeat);
-  }, [play, playAnimationRef, repeat, music]);
+  }, [play, playAnimationRef, repeat]);
 
   useEffect(() => {
     if (AudioRef.current) {
@@ -198,7 +196,7 @@ const NewAlbum = () => {
 
   const endMusic = () => {
     if (DiskRef.current) {
-      DiskRef.current.style.setProperty("--time-album", "0s");
+      DiskRef.current.classList.remove("Animation__Img");
     }
     clearInterval(intervalId);
     setIntervalId(0);
@@ -222,7 +220,7 @@ const NewAlbum = () => {
                     className="w-[100%] h-auto transition-all duration-150 ease-in"
                     ref={DiskRef}
                     src={album.image[img]}
-                    alt=""
+                    alt={album.namefa}
                   />
                 </div>
                 <div className="md:w-[45%] w-[100%] pt-12">
