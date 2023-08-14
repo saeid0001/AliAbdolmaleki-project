@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import api from "../../../api/api";
 import { RootState } from "../store";
