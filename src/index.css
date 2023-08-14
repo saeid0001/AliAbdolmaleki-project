@@ -32,7 +32,6 @@
         background-color: #a46352;
     }
 
-    /* for firefox */
     ::moz-selection {
         color: #fff;
         background-color: #a46352;
